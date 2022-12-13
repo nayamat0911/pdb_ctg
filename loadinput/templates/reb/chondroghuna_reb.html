@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+BPDB|CTG|REB
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container"><br>
+    <div class="card p-3 mt-2">
+        <div class="card-body">
+            <div class="content" >
+                <h3 class='text-center'>{{title_name}}</h3><hr>
+                <form action = "" method="POST" >
+                    {% csrf_token %}                   
+                    <table class="table table-bordered tex-center">
+                      <thead class="" >
+                        <tr class="bg-success " style="padding-left:50px;"  >
+                          <th>Time</th>
+                          <th>Rangunia</th>
+                          <th>Kodala</th>
+                        </tr>
+                      </thead>                           
+                    </table>
+                    {% for load in load__ch_reb %}
+                    <div class="bg-light py-2 m-2">
+                      <div class="row" style="padding-left:50px;">
+                          <span class="col col-sm-4"><b>time</b></span>
+                          <span class="col col-sm-4">{{load.Rangunia}}</span>
+                          <span class="col col-sm-4">{{load.Kodala}}</span> 
+                      </div>
+                    </div>
+                    {% endfor %}
+                      <div class="bg-secondary py-2 m-1" style="padding-left:26%">
+                        {{g__ch_reb}}
+                        <span class="ml-3"><input type="submit" value = "Submit" class="btn btn-warning "></span>
+
+                      </div>
+                      <div class='back'>
+                        <a class="btn btn-info back_button px-5 py-3" href="{% url 'loadinput:chandroghuna' %}">Back</a>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
+{% endblock %}

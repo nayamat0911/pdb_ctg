@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+BPDB|CTG|Home
+{% endblock %}
+<style>
+    a:link {
+  text-decoration: none;
+}
+</style>
+
+
+{% block content %}
+<div class="container"><br>
+    <div class="greetinng text-center pb-4">
+        <h3>WELCOME!</h3>
+        <h6>Bangladesh Power development board</h6>
+    </div>
+    <div class="row">
+        <div class="col col-sm-4  pt-4"> 
+            <a href="{% url 'gridload:Grid_load_input' %}">
+            <div class="card" style="width:60%; margin-left: 20%;">
+                <div class="card-body bg-success">
+                    <div class="content" style="padding-left:25%;">
+                        HOURLY LOAD
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="col col-sm-4  pt-4"> 
+            <a href="{% url 'gridload:REB_load' %}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-warning">
+                        <div class="content" style="padding-left:25%;">
+                           HOURLY REB
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col col-sm-4  pt-4"> 
+            <a href="{% url 'gridload:Grid_load_show'%}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-secondary">
+                        <div class="content" style="padding-left:25%;">
+                            TOTAL LOAD
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col col-sm-4  pt-4"> 
+            <a href="{% url 'GEN:Generation_11AM' %}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-info">
+                        <div class="content" style="padding-left:25%;">
+                            GENERATION
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col col-sm-4  pt-4">
+            <a href="{% url 'gridload:Grid_load_input' %}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-danger">
+                        <div class="content" style="padding-left:25%;">
+                            33KV GEN
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col col-sm-4 pt-4">
+            <a href="{% url 'gridload:Grid_load_input' %}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-info">
+                        <div class="content" style="padding-left:25%;">
+                            230KV-132KV
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col col-sm-4 pt-4"> 
+            <a href="{% url 'gridload:PDB_RRB' %}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-warning">
+                        <div class="content" style="padding-left:25%;">
+                            PDB & REB
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col col-sm-4 pt-4"> 
+            <a href="{% url 'gridload:PDB_RRB_shed' %}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-info">
+                        <div class="content" style="padding-left:25%;">
+                            SHED PDB REB
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col col-sm-4 pt-4"> 
+            <a href="{% url 'gridload:Grid_load_input' %}">
+                <div class="card" style="width:60%; margin-left: 20%;">
+                    <div class="card-body bg-warning">
+                        <div class="content" style="padding-left:25%;">
+                            TOTAL SHED
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    
+</div>
+    
+{% endblock %}

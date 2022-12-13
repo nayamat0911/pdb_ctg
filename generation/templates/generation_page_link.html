@@ -1,0 +1,23 @@
+
+{% load static %}
+
+
+{% block title %}
+BPDB|CTG|Generation
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container"><br>
+    <p>Generation</p>
+    <ul class="dddd">
+        <li><a class="dropdown-item" href="{% url 'GEN:Generation_11AM' %}">Generetion 1100 AM</a></li>
+        <li><a class="dropdown-item" href="{% url 'GEN:Generation_19PM' %}">Generetion 1900 PM</a></li>
+        <li><a class="dropdown-item" href="{% url 'GEN:Generation_33kv' %}">Generetion 33 KV </a></li>
+        <li><a class="dropdown-item" href="{% url 'GEN:Generation_Disply' %}">Gen Disply</a></li>
+    </ul> 
+    
+</div>
+    
+{% endblock %}

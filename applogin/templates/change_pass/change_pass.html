@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+BPDB|CTG|Login
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container"><br>
+    <div class="card p-3 mt-2 bg-info" style="width:60%; margin-left: 20%;">
+        <div class="header text-center pt-2">
+            <h3>Login Now!</h3>
+        </div>
+        <div class="card-body">
+            <div class="content" style="padding-left:35% ;">
+                <form action = "" method="POST" >
+                    {% csrf_token %}
+                    {% for form in form %}
+                    {{form.label_tag}}<br>{{form}}{{form.errors|striptags}}<br><br>
+                    {% endfor %}
+                    <input type="submit" value = "Update" class="btn btn-warning"><br><br>
+                    <span class=" color:light"> Click here to </span><a href="{% url 'applogin:usersignup' %}">Create a new acccount</a></form>
+                    <small>If you have no remmember your old password you can <a href="{% url 'applogin:Change_pass_without_old' %}">Set a New Password</a> </small>
+                    <span class=" color:light"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
+{% endblock %}

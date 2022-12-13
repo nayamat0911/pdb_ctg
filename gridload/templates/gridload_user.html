@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+BPDB|CTG|Load
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container"><br>
+    <div class="card "id="home_card">
+        <div class="card-body">
+            <div class="content" >
+                <h3 class='text-center'>CTG Load</h3><hr>
+                    <div class="grid_user">
+                        <ul>
+                            <a href="{% url 'loadinput:Khulshi' %}">Khulshi</a>
+                            <a href="{% url 'loadinput:hathazari' %}">Hathazari</a>
+                            <a href="{% url 'loadinput:halishahor' %}">Halishahor</a>
+                            <a href="{% url 'loadinput:Bakalia' %}">Bakalia</a>
+                            <a href="{% url 'loadinput:agrabad' %}">Agrabad</a>
+                            <a href="{% url 'loadinput:rampur' %}">Rampur</a>
+                            <a href="{% url 'loadinput:sholoshahor' %}">Sholoshahor</a>
+                            <a href="{% url 'loadinput:kalurghat' %}">Kalurghat</a>
+                            
+                            <a href="{% url 'loadinput:barulia' %}">Barulia</a>
+                            <a href="{% url 'loadinput:shahmirpur' %}">Shahmirpur</a>
+                            <a href="{% url 'loadinput:julda' %}">Julda</a>                          
+                            <a href="{% url 'loadinput:madunaaghat' %}">Madunaaghat</a>
+                            <a href="{% url 'loadinput:chandroghuna' %}">Chandroghuna</a>
+                            <a href="{% url 'loadinput:duhazari' %}">Duhazari</a>
+                            <a href="{% url 'loadinput:coxsbazar' %}">Cox'sBazar</a>
+                            <a href="{% url 'loadinput:matarbari' %}">Matarbari</a>                           
+                            <a href="{% url 'loadinput:khagrachari' %}">Khagrachari</a>
+                            <a href="{% url 'loadinput:ranghamati' %}">Ranghamati</a>
+                            <a href="{% url 'loadinput:baroiarhat' %}">Baroiarhat</a>                           
+                            <a href="{% url 'loadinput:AKS132kv' %}">AKS132KV</a>
+                            <a href="{% url 'loadinput:krsm' %}">KRSM132KV</a>
+                            <a href="{% url 'loadinput:msml' %}">MSML132KV</a>
+                            <a href="{% url 'loadinput:sasm' %}">SASM132KV</a>                           
+                            <a href="{% url 'loadinput:shikalbhaha' %}">Shikalbhaha</a>
+                            <a href="{% url 'loadinput:kaptai' %}">Kaptai</a>
+                            <a href="{% url 'loadinput:tk132' %}">TK 132</a>                 
+                            <a href="{% url 'loadinput:aks230kv' %}">AKS230KV</a>
+                            <a href="{% url 'loadinput:bsrm230kv' %}">BSRM230KV</a>
+                            <a href="{% url 'loadinput:gph230kv' %}">GPH230KV</a>
+                            <a href="{% url 'loadinput:mirashorai' %}">Mirashorai EZ230KV</a>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div><br><br>
+    
+</div>
+    
+{% endblock %}

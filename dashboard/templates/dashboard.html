@@ -1,0 +1,339 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+
+
+<script src="js/download.js"></script>
+<script src="js/table2excel.js"></script>
+{% endblock %}
+
+{% block title %}
+BPDB|CTG|Load
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container-fluid"><br>
+                <div class="content" >
+                <div class="row pb-2">
+                    <div class="col col-10">
+                     
+                        <h2 class="text-center"> Chittagong System Control(SCADA)</h2>
+                        <button id="downloadexcel"> Export to excel</button>
+                    </div>
+                    <div class="col col-2">
+                      
+                        <h5 class="text-left"><b> 19/11/2022</b></h5>
+                        <h5 class="text-left"><b> Thusday</b></h5>
+                        <a href="/dashboard/pdf/">Download</a>
+                    </div>
+                </div>
+                
+                
+                  <table class="table table-bordered" id="data-table">
+                    <thead style="border:3px solid orange">
+                      <tr >
+                        <th scope="col" style="border-right:px solid rgb(255, 149, 0);">Time</th>
+                        <th scope="col" ><b>01:00</b></th>
+                        <th scope="col"><b>02:00</b></th>
+                        <th scope="col"><b>03:00</b></th>
+                        <th scope="col"><b>04:00</b></th>
+                        <th scope="col"><b>05:00</b></th>
+                        <th scope="col" style="border-right:2px solid red"><b>06:00</b></th>
+                        <th scope="col"><b>07:00</b></th>
+                        <th scope="col"><b>08:00</b></th>
+                        <th scope="col"><b>09:00</b></th>
+                        <th scope="col"><b>1000</b></th>
+                        <th scope="col"><b>11:00</b></th>
+                        <th scope="col"><b>12:00</b></th>
+                        <th scope="col"><b>13:00</b></th>
+                        <th scope="col"><b>14:00</b></th>
+                        <th scope="col"><b>15:00</b></th>
+                        <th scope="col"><b>16:00</b></th>
+                        <th scope="col"><b>17:00</b></th>
+                        <th scope="col"><b>18:00</b></th>
+                        <th scope="col"><b>19:00</b></th>
+                        <th scope="col"><b>20:00</b></th>
+                        <th scope="col"><b>21:00</b></th>
+                        <th scope="col"><b>22:00</b></th>
+                        <th scope="col"><b>23:00</b></th>
+                        <th scope="col"><b>24:00</b></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style="border-bottom:1px solid rgb(255, 6, 6)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Madunaghat</b></td>
+                        {% for data in data_mad %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                        
+                      </tr>
+                      <tr style="border-bottom:1px solid red">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Hathazari</b></td>
+                        {% for data in data_hat %}
+                          {% if data %}
+                          <td>{{data.Grid_Load}}</td>
+                          {% elif data != data  %}
+                          <td>no</td>
+                          <td></td>
+                          {% else %}
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                                          
+                          {% endif %} 
+                        {% endfor %} 
+                                      
+                  
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Bakalia</b></td>
+                        {% for data in data_bak %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid red">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Khulshi</b></td>
+                        
+                        {% for data in data_khul %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Khulshi BSRM</b></td>
+                        {% for data in data_khul %}
+                        <td>{{data.BSRM}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid red">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Halishahar</b></td>
+                        {% for data in data_hali %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid red">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Baraulia</b></td>
+                        {% for data in data_bar %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Cox's Bazar</b></td>
+                        {% for data in data_cox %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Dohazari</b></td>
+                        {% for data in data_du %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Chandraghuna</b></td>
+                        {% for data in data_chan %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Julda</b></td>
+                        {% for data in data_jul %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Shamirpur</b></td>
+                        {% for data in data_sha %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Khagrachari</b></td>
+                        {% for data in data_khag %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Matarbari</b></td>
+                        {% for data in data_mat %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Rangamati</b></td>
+                        {% for data in data_rang %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Baraiyarhat</b></td>
+                        {% for data in data_baraio %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Agrabad</b></td>
+                        {% for data in data_agr %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Rampur</b></td>
+                        {% for data in data_ramp %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Kalurghat</b></td>
+                        {% for data in data_kalu %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>Sholoshohr</b></td>
+                        {% for data in data_sho %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                    <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>AKS 132Kv</b></td>
+                        {% for data in data_aks132 %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      </tr><tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>KSRM</b></td>
+                        {% for data in data_ksrm %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td style="border-right:2px solid rgb(255, 6, 6)"><b>SASM</b></td>
+                        {% for data in data_sasm %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td><b>Shikolbaha</b></td>
+                        {% for data in data_shikl %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td><b>Kaptai</b></td>
+                        {% for data in data_kap %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td><b>TK 132</b></td>
+                        {% for data in data_tk %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:3px solid rgb(255, 0, 0)">
+                        <td><b>MSML</b></td>
+                        {% for data in data_msml %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:3px solid rgb(255, 0, 0)">
+                        <td><b>TOTAL 132KV</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td><b>AKS 230 KV</b></td>
+                        {% for data in data_aks230 %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td><b>BSRM 230 KV</b></td>
+                        {% for data in data_bsrm230 %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:1px solid rgb(0, 0, 0)">
+                        <td><b>GPH 230 KV</b></td>
+                        {% for data in data_gph %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                      <tr style="border-bottom:4px solid rgb(255, 0, 0)">
+                        <td><b> Mirsarai EZ</b></td>
+                        {% for data in data_mir %}
+                        <td>{{data.Grid_Load}}</td>
+                        {% endfor %}
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="border-bottom:4px solid rgb(255, 0, 0)">
+                        <td><b>ZONE TOTAL</b></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+
+                    </tfoot>
+                  </table>
+                  <script>
+                    document.getElementById('downloadexcel').addEventListener('click',function(){
+                      
+                      var table2excel = new Table2Excel();
+                      table2excel.export(document.querySelectorAll("#data-table"));
+                  
+                  });
+                  </script>
+            </div>
+
+    
+</div>
+    
+{% endblock %}

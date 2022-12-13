@@ -1,0 +1,51 @@
+
+/* grid_user_templates-------------------------- */
+#home_card{
+    background-color: rgb(236, 246, 254);
+}
+.grid_user ul a{
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color:teal;
+    text-transform: none;
+    border-radius: 5px;
+    
+}
+
+.grid_user ul a{
+    text-decoration: none;
+    color:#fff;
+}
+.grid_user ul a:hover{
+    text-decoration: none;
+    color: rgb(232, 232, 232);
+    text-transform: scale(1.2 1.2);
+}
+.content .reb_link_upper a{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgb(177, 223, 223);
+    color: rgb(0, 0, 0);
+    margin-bottom: 3px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.content .reb_link_lower a{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgb(35, 95, 95);
+    color: rgb(243, 239, 239);
+    margin-top: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}

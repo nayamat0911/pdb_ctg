@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+BPDB|CTG|Load
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container"><br>
+    <div class="card p-3 mt-2">
+        <div class="card-body">
+            <div class="content" >
+                <h3 class='text-center'>{{title_name}}</h3><hr>
+                <div class="reb_link_upper">
+                  <a href="{% url 'loadinput:barulia__reb' %}">Click here to put REB LOAD</a>
+                </div>
+                
+                <form action = "" method="POST" >
+                    {% csrf_token %}                   
+                    <table class="table table-bordered" >
+                      <thead class="heading">
+                        <tr class="py-3 ">
+                          <th>Time</th>
+                          <th>Grid Load</th>
+                          <th>PDB shed</th>
+                          <th>REB shed</th>
+                        </tr>
+                      </thead>                           
+                    </table>
+                    {% for load in load__bar%}
+                    <div class=" data_table">
+                      <div class="row " style="padding-left:50px;">
+                          <span class="col col-sm-2">Time</b></span>
+                          <span class="col col-sm-4"><b>{{load.Grid_Load}}</b></span>
+                          <span class="col col-sm-3">{{load.PDB_Shed}}</span>
+                          <span class="col col-sm-3">{{load.Reb_Shed}}</span> 
+                      </div>
+                    </div>
+                    {% endfor %}
+                      <div class=" input_box py-3" style="padding:3px">
+                        {{g__bar}}
+
+                      </div>
+                      
+                      <div class='mt-2'>
+                        <a class="btn btn-info back_button px-5 py-3" href="{% url 'gridload:Grid_load_input' %}">Back</a>
+                        <span class="submit_button"><input type="submit" value = "Submit" class="btn btn-warning submit px-5 py-3"></span><br><br>
+                      </div>
+                </form>
+                <div class="reb_link_lower">
+                  <a href="{% url 'loadinput:barulia__reb' %}">Click here to put REB LOAD</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
+{% endblock %}

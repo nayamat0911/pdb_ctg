@@ -1,0 +1,12 @@
+Name: PDB CTG REPORT
+anyone can't acess project without before signup and login
+who user loiged in project thne access the home page 
+user put there elcetric load consumtion per hourly and input there load, PDB, REB, Load Shed, Reb Shed, Generation etc,
+all inputed load show in display dashboard page, Total load displaye hourly summation calculate, 
+REB load show in Reb load page, 
+total load, PDB load , reb load and shed all dispale summary in one page thats is PDB REB page.
+generetion page input admin in 1100 am and 1900hr, and displaye in same page.
+33 kv genereation page. user input  and admin input access and show all histroy in same page,
+230kv industrial load minimize from from total load thats name in 33kv demustric load its show in dashboard page.
+
+
